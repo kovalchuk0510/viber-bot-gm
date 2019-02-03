@@ -9,7 +9,6 @@ const bot = new ViberBot({
     avatar: "https://raw.githubusercontent.com/devrelv/drop/master/151-icon.png"
 });
 
-
 const port = process.env.PORT || 8080;
 const webhookUrl = "https://viber-bot-gm.herokuapp.com/";
 express().listen(port, () => console.log(`Listening on ${ port }`))
