@@ -10,6 +10,6 @@ const bot = new ViberBot({
 });
 
 const port = process.env.PORT || 8080;
-const webhookUrl = "https://viber-bot-gm.herokuapp.com/";
-express().listen(port, () => console.log(`Listening on ${ port }`))
-// https.createServer(bot.middleware()).listen(port, () => bot.setWebhook(webhookUrl));
+const webhookUrl = process.env.WEBHOOK_URL || process.env.HEROKU_URL;
+// express().listen(port, () => console.log(`Listening on ${ port }`))
+https.createServer(bot.middleware()).listen(port, () => bot.setWebhook(webhookUrl));
